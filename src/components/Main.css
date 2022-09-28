@@ -1,0 +1,118 @@
+/*************
+General Elements
+**************/
+
+/*************
+Images
+**************/
+
+.beast-img {
+  width: 100%;
+  height: 90vw;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 250ms transform ease;
+  border-radius: 2px;
+}
+
+.beast-img:hover {
+  transform: scale(1.02);
+}
+
+/*************
+Buttons / Links
+**************/
+
+/*************
+Typography
+**************/
+
+.beast-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #06283d;
+  margin-bottom: 0.5rem;
+}
+
+.beast-content,
+.beast-vote {
+  color: #06283d;
+}
+
+.beast-content {
+  margin-bottom: 0.25rem;
+}
+
+/*************
+Layout
+**************/
+
+main {
+  width: 100%;
+  padding: 3rem 0;
+}
+
+.main-container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.beast-container {
+  margin-bottom: 2rem;
+}
+
+/*************
+Media Queries
+**************/
+
+@media (min-width: 700px) {
+  /* 
+  Images @700px
+  */
+
+  .beast-img {
+    height: 43vw;
+  }
+
+  /* 
+  Typography @700px
+  */
+
+  /* 
+  Layout @700px
+  */
+
+  .main-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .beast-container {
+    width: 48%;
+  }
+}
+
+@media (min-width: 900px) {
+  /* 
+  Images @900px
+  */
+
+  .beast-img {
+    height: 27vw;
+  }
+
+  /* 
+  Layout @900px
+  */
+
+  .beast-container {
+    width: 30%;
+  }
+}

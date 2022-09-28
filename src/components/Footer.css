@@ -1,0 +1,41 @@
+/*************
+General Elements
+**************/
+
+/*************
+Images
+**************/
+
+/*************
+Buttons / Links
+**************/
+
+/*************
+Typography
+**************/
+
+.footer-content {
+  font-weight: 700;
+  color: #f8f8f8;
+}
+
+/*************
+Layout
+**************/
+
+footer {
+  width: 100%;
+  background-color: #06283d;
+  padding: 3rem 0;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*************
+Media Queries
+**************/

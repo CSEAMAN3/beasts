@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./reset.css";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer";
+import Main from "./components/Main";
+import Modal from "./components/Modal";
+import beastData from "./data.json";
+import { useState } from "react";
 
 function App() {
+  const [modalShow, setModalShow] = useState(false);
+  const [activeBeast, setActiveBeast] = useState({});
+
+  const changeModal = (beast) => {
+    setModalShow(!modalShow);
+    setActiveBeast(beast);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Main beastData={beastData} changeModal={changeModal} />
+      <Footer />
+      {modalShow && (
+        <Modal changeModal={changeModal} activeBeast={activeBeast} />
+      )}
     </div>
   );
 }
