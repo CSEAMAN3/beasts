@@ -4,26 +4,33 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Modal from "./components/Modal";
-import beastData from "./data.json";
+import beastJson from "./data.json";
 import { useState } from "react";
 
 function App() {
   const [modalShow, setModalShow] = useState(false);
   const [activeBeast, setActiveBeast] = useState({});
+  const [beastData, setBeastData] = useState(beastJson);
 
   const changeModal = (beast) => {
     setModalShow(!modalShow);
     setActiveBeast(beast);
+
+    // Show all beasts some sort of if statements 2 lines.
+  };
+
+  const handleFilter = (event) => {
+    const numHorns = parseInt(event.target.value);
+    const myFilteredBeasts = beastJson.filter((beast) => beast.horns === numHorns);
+    setBeastData(myFilteredBeasts);
   };
 
   return (
     <div className="App">
-      <Header />
+      <Header handleFilter={handleFilter} />
       <Main beastData={beastData} changeModal={changeModal} />
       <Footer />
-      {modalShow && (
-        <Modal changeModal={changeModal} activeBeast={activeBeast} />
-      )}
+      {modalShow && <Modal changeModal={changeModal} activeBeast={activeBeast} />}
     </div>
   );
 }
