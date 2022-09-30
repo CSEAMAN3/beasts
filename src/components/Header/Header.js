@@ -6,7 +6,7 @@ export default function Header({ handleFilter }) {
         <h1 className="header-heading">Beasts</h1>
         <form>
           <select name="hornFilter" onChange={handleFilter}>
-            <option value="All">All</option>
+            <option value="">All</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

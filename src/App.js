@@ -15,13 +15,15 @@ function App() {
   const changeModal = (beast) => {
     setModalShow(!modalShow);
     setActiveBeast(beast);
-
-    // Show all beasts some sort of if statements 2 lines.
   };
 
   const handleFilter = (event) => {
     const numHorns = parseInt(event.target.value);
     const myFilteredBeasts = beastJson.filter((beast) => beast.horns === numHorns);
+
+    event.target.value === "" ? setBeastData(beastJson) : setBeastData(myFilteredBeasts);
+
+    // Show all beasts some sort of if statements 2 lines.
     setBeastData(myFilteredBeasts);
   };
 
