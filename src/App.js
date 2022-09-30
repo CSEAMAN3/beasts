@@ -24,7 +24,6 @@ function App() {
     event.target.value === "" ? setBeastData(beastJson) : setBeastData(myFilteredBeasts);
 
     // Show all beasts some sort of if statements 2 lines.
-    setBeastData(myFilteredBeasts);
   };
 
   return (
